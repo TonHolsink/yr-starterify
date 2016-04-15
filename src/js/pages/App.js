@@ -6,6 +6,7 @@ import { version } from '../../../package.json';
 import Picker from '../components/Picker';
 import Posts from '../components/Posts';
 
+import Footer from "../components/layout/Footer";
 import Nav from "../components/layout/Nav";
 
 class App extends Component {
@@ -64,38 +65,43 @@ class App extends Component {
             <div>
 		      <Nav location={location} />
 
-                <header style={containerStyle}>
+                <div class="container" style={containerStyle}>
+
                     <h1>React Starterify {version}</h1>
-                </header>
-                <section>
-                    {children || 'Welcome to React Starterify'}
-                </section>
-                <Picker
-                    value = {selectedReddit}
-                    onChange = {this.handleChange}
-                    options = {['reactjs', 'frontend']}
-                />
-                <p>
-                    {lastUpdated &&
-                    <span>
-                      Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
-                        {' '}
-                    </span>
-                    }
-                    {
-                        !isFetching &&
-                        <a href="#"
-                           onClick={this.handleRefreshClick}>
-                            Refresh
-                        </a>
-                    }
-                </p>
-                {isEmpty
-                    ? (isFetching ? <h2>Loading...</h2> : <h2>Empty.</h2>)
-                    : <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-                    <Posts posts={posts} />
+	                <section>
+	                    {children || 'Welcome to React Starterify'}
+	                </section>
+	                <Picker
+	                    value = {selectedReddit}
+	                    onChange = {this.handleChange}
+	                    options = {['reactjs', 'frontend']}
+	                />
+	                <p>
+	                    {lastUpdated &&
+	                    <span>
+	                      Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
+	                        {' '}
+	                    </span>
+	                    }
+	                    {
+	                        !isFetching &&
+	                        <a href="#"
+	                           onClick={this.handleRefreshClick}>
+	                            Refresh
+	                        </a>
+	                    }
+	                </p>
+	                {isEmpty
+	                    ? (isFetching ? <h2>Loading...</h2> : <h2>Empty.</h2>)
+	                    : <div style={{ opacity: isFetching ? 0.5 : 1 }}>
+	                    <Posts posts={posts} />
+	                </div>
+	                }
+
                 </div>
-                }
+
+                <Footer/>
+
             </div>
         );
     }

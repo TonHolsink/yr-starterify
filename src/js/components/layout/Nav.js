@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { IndexLink, Link } from "react-router";
 
 export default class Nav extends React.Component {
   constructor() {
@@ -17,7 +17,7 @@ export default class Nav extends React.Component {
   render() {
     const { location } = this.props;
     const { collapsed } = this.state;
-    const aboutClass = location.pathname.match(/^\/about/) ? "active" : "";
+    const aboutClass = location.pathname === "/" ? "active" : "";
     const poweredByClass = location.pathname.match(/^\/poweredby/) ? "active" : "";
     const navClass = collapsed ? "collapse" : "";
 
@@ -35,7 +35,7 @@ export default class Nav extends React.Component {
           <div class={"navbar-collapse " + navClass} id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li class={aboutClass}>
-                <Link to="/about" onClick={this.toggleCollapse.bind(this)}>About</Link>
+                <IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>About</IndexLink>
               </li>
               <li class={poweredByClass}>
                 <Link to="/poweredby" onClick={this.toggleCollapse.bind(this)}>Powered by</Link>
