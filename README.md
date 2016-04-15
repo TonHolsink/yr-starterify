@@ -1,0 +1,2 @@
+# yr-starterify
+private project
