@@ -1,13 +1,10 @@
-// import 'babel-polyfill';
 import React, { Component, PropTypes } from 'react';
 import { selectReddit, fetchPostsIfNeeded, invalidateReddit } from '../actions';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
-import { version } from '../../../package.json';
 import Picker from '../components/Picker';
 import Posts from '../components/Posts';
 
-class App extends Component {
+class ReactJs extends Component {
     constructor(props) {
         super(props)
         this.handleChange = this.handleChange.bind(this);
@@ -43,47 +40,40 @@ class App extends Component {
         const isEmpty = posts.length === 0;
 
         return (
-            <div>
-                <header>
-                    <h1>React Starterify {version}</h1>
-                    <Link to="/about">About</Link>
-                    <Link to="/poweredby">Powered by</Link>
-                </header>
-                <section>
-                    {children || 'Welcome to React Starterify'}
-                </section>
-                <Picker
-                    value = {selectedReddit}
-                    onChange = {this.handleChange}
-                    options = {['reactjs', 'frontend']}
-                />
-                <p>
-                    {lastUpdated &&
-                    <span>
-                      Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
-                        {' '}
-                    </span>
-                    }
-                    {
-                        !isFetching &&
-                        <a href="#"
-                           onClick={this.handleRefreshClick}>
-                            Refresh
-                        </a>
-                    }
-                </p>
-                {isEmpty
-                    ? (isFetching ? <h2>Loading...</h2> : <h2>Empty.</h2>)
-                    : <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-                    <Posts posts={posts} />
-                </div>
-                }
-            </div>
+		  <div>
+		    <h2>reactjs</h2>
+		    <Picker
+		        value = {selectedReddit}
+		        onChange = {this.handleChange}
+		        options = {['reactjs', 'frontend']}
+		    />
+		    <p>
+		        {lastUpdated &&
+		        <span>
+		          Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
+		            {' '}
+		        </span>
+		        }
+		        {
+		            !isFetching &&
+		            <a href="#"
+		               onClick={this.handleRefreshClick}>
+		                Refresh
+		            </a>
+		        }
+		    </p>
+		    {isEmpty
+		        ? (isFetching ? <h2>Loading...</h2> : <h2>Empty.</h2>)
+		        : <div style={{ opacity: isFetching ? 0.5 : 1 }}>
+		        <Posts posts={posts} />
+		    </div>
+		    }
+		  </div>
         );
     }
 }
 
-App.propTypes = {
+ReactJs.propTypes = {
     selectedReddit: PropTypes.string.isRequired,
     posts: PropTypes.array.isRequired,
     isFetching: PropTypes.bool.isRequired,
@@ -112,4 +102,5 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(ReactJs);
+

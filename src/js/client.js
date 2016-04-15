@@ -2,9 +2,10 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route, hashHistory } from 'react-router';
-import App from './components/App';
-import PoweredBy from './components/Powered-by';
-import About from './components/About';
+import App from './pages/App';
+import PoweredBy from './pages/Powered-by';
+import About from './pages/About';
+import ReactJs from './pages/ReactJs';
 import configureStore from './store/configureStore';
 
 window.React = React;
@@ -26,6 +27,7 @@ render(
     <Route path="/" component={App}>
       <Route path="/about" component={About} />
       <Route path="/poweredby" component={PoweredBy} />
+      <Route path="/reactjs" component={ReactJs} />
     </Route>
   </Router></Provider>), document.getElementById('content')
 );
