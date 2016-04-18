@@ -19,7 +19,6 @@ export default class Nav extends React.Component {
         const {collapsed} = this.state;
         const aboutClass = location.pathname === "/" ? "active" : "";
         const poweredByClass = location.pathname.match(/^\/poweredby/) ? "active" : "";
-        const reactJsClass = location.pathname.match(/^\/reactjs/) ? "active" : "";
         const navClass = collapsed ? "collapse" : "";
 
         return (
@@ -28,9 +27,9 @@ export default class Nav extends React.Component {
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" onClick={this.toggleCollapse.bind(this)}>
                             <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
+                            <span class="icon-bar"/>
+                            <span class="icon-bar"/>
+                            <span class="icon-bar"/>
                         </button>
                     </div>
                     <div class={"navbar-collapse " + navClass} id="bs-example-navbar-collapse-1">

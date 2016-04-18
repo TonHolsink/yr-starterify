@@ -51,10 +51,6 @@ class App extends Component {
         const {selectedReddit, posts, isFetching, lastUpdated, children} = this.props;
         const isEmpty = posts.length === 0;
         const {location} = this.props;
-        const {collapsed} = this.state;
-        const archivesClass = location.pathname.match(/^\/about/) ? "active" : "";
-        const settingsClass = location.pathname.match(/^\/poweredby/) ? "active" : "";
-        const navClass = collapsed ? "collapse" : "";
         const containerStyle = {
             marginTop: "60px"
         };
