@@ -1,4 +1,5 @@
 import {combineReducers} from 'redux';
+//noinspection JSFileReferences
 import {
     SELECT_REDDIT, INVALIDATE_REDDIT,
     REQUEST_POSTS, RECEIVE_POSTS

@@ -2,8 +2,10 @@ import React from 'react';
 import {dependencies, devDependencies} from '../../../package.json';
 
 const PoweredBy = () => {
+    //noinspection HtmlUnknownAttribute
     const deps = Object.keys(dependencies)
         .map((dep, i) => <li key={i}>{dep}</li>);
+    //noinspection HtmlUnknownAttribute
     const devDeps = Object.keys(devDependencies)
         .map((dep, i) => <li key={i + 10}>{dep}</li>);
 

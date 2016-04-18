@@ -2,6 +2,7 @@ import React, {PropTypes, Component} from 'react';
 
 export default class Posts extends Component {
     render() {
+        //noinspection HtmlUnknownAttribute
         return (
             <ul>
                 {this.props.posts.map((post, i) =>

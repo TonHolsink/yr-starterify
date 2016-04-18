@@ -4,6 +4,7 @@ export default class Picker extends Component {
     render() {
         const {value, onChange, options} = this.props;
 
+        //noinspection HtmlUnknownAttribute
         return (
             <span>
                 <h1>{value}</h1>

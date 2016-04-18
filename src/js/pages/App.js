@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+//noinspection JSFileReferences
 import {selectReddit, fetchPostsIfNeeded, invalidateReddit} from '../actions';
 import {connect} from 'react-redux';
 import {version} from '../../../package.json';
