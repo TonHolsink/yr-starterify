@@ -1,9 +1,8 @@
-import {combineReducers} from 'redux';
-//noinspection JSFileReferences
+import { combineReducers } from 'redux'
 import {
     SELECT_REDDIT, INVALIDATE_REDDIT,
     REQUEST_POSTS, RECEIVE_POSTS
-} from '../actions';
+} from '../actions'
 
 function selectedReddit(state = 'reactjs', action) {
     switch (action.type) {
@@ -37,11 +36,11 @@ function posts(state = {
                 lastUpdated: action.receivedAt
             });
         default:
-            return state;
+            return state
     }
 }
 
-function postsByReddit(state = {}, action) {
+function postsByReddit(state = { }, action) {
     switch (action.type) {
         case INVALIDATE_REDDIT:
         case RECEIVE_POSTS:
@@ -59,4 +58,4 @@ const rootReducer = combineReducers({
     selectedReddit
 });
 
-export default rootReducer;
+export default rootReducer
