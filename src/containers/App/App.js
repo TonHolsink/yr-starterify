@@ -1,10 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import { selectReddit, fetchPostsIfNeeded, invalidateReddit } from '../../actions/index';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { version } from '../../../package.json';
-import Picker from '../../components/Picker';
-import Posts from '../../components/Posts';
 
 class App extends Component {
     render() {
@@ -15,6 +12,7 @@ class App extends Component {
                 <header>
                     <h1>R111eact Starterify {version}</h1>
                     <Link to="/forms">Formulieren</Link>
+                    <Link to="/redux-forms">Redux-Forms</Link>
                     <Link to="/about">About</Link>
                     <Link to="/datalist">Datalist</Link>
                 </header>

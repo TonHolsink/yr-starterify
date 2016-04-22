@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import counter from './counter';
 import reddit from './reddit';
+import {reducer as formReducer} from 'redux-form';
 
 export default combineReducers({
-    counter,
-    reddit
+    reddit,
+    form: formReducer
+    counter
 });
