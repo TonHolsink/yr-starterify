@@ -5,6 +5,6 @@ import {reducer as formReducer} from 'redux-form';
 
 export default combineReducers({
     reddit,
-    form: formReducer
+    form: formReducer,
     counter
 });
