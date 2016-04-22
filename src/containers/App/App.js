@@ -16,7 +16,7 @@ class App extends Component {
                     <h1>R111eact Starterify {version}</h1>
                     <Link to="/forms">Formulieren</Link>
                     <Link to="/about">About</Link>
-                    <Link to="/poweredby">Powered by</Link>
+                    <Link to="/datalist">Datalist</Link>
                 </header>
                 <section>
                     {children || 'Welcome to React Starterify'}

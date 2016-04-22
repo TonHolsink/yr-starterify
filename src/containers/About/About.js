@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { selectReddit, fetchPostsIfNeeded, invalidateReddit } from '../../actions/index';
+import { selectReddit, fetchPostsIfNeeded, invalidateReddit } from '../../actions/reddit';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { version } from '../../../package.json';
