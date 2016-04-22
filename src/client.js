@@ -6,6 +6,7 @@ import App from './containers/App/App';
 import PoweredBy from './components/Powered-by';
 import About from './containers/About/About';
 import Forms from './containers/Forms/Forms';
+import ReduxForms from './containers/Forms/ReduxForms';
 import configureStore from './store/configureStore';
 
 if (process.env.NODE_ENV !== 'production') {
@@ -28,6 +29,7 @@ render(
   (<Provider store={store}><Router history={hashHistory}>
     <Route path="/" component={App}>
       <Route path="/forms" component={Forms} />
+      <Route path="/redux-forms" component={ReduxForms} />
       <Route path="/about" component={About} />
       <Route path="/poweredby" component={PoweredBy} />
     </Route>
