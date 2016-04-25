@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { version } from '../../../package.json';
+import CounterStatus from '../Counter/CounterStatus';
 
 class App extends Component {
     render() {
@@ -15,6 +16,8 @@ class App extends Component {
                     <Link to="/redux-forms">Redux-Forms</Link>
                     <Link to="/about">About</Link>
                     <Link to="/datalist">Datalist</Link>
+                    <Link to="/counter">Counter</Link>
+                    <CounterStatus />
                 </header>
                 <section>
                     {children || 'Welcome to React Starterify'}
